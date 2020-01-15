@@ -13,6 +13,12 @@
 		4AF60A2F23CE9999002BE3C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF60A2D23CE9999002BE3C8 /* LaunchScreen.storyboard */; };
 		4AF60A3A23CE9999002BE3C8 /* Deviget_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A3923CE9999002BE3C8 /* Deviget_ChallengeTests.swift */; };
 		4AF60A4523CE9999002BE3C8 /* Deviget_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A4423CE9999002BE3C8 /* Deviget_ChallengeUITests.swift */; };
+		4AF60A5523CEA6B0002BE3C8 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A5423CEA6B0002BE3C8 /* ApplicationCoordinator.swift */; };
+		4AF60A5B23CEA7FA002BE3C8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A5A23CEA7FA002BE3C8 /* Coordinator.swift */; };
+		4AF60A5E23CEA887002BE3C8 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A5D23CEA887002BE3C8 /* PostListViewController.swift */; };
+		4AF60A6023CEA895002BE3C8 /* PostListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF60A5F23CEA895002BE3C8 /* PostListViewController.storyboard */; };
+		4AF60A6223CEA8B2002BE3C8 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A6123CEA8B2002BE3C8 /* PostListViewModel.swift */; };
+		4AF60A6423CEA8BE002BE3C8 /* PostListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A6323CEA8BE002BE3C8 /* PostListCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		4AF60A4023CE9999002BE3C8 /* Deviget-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Deviget-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF60A4423CE9999002BE3C8 /* Deviget_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deviget_ChallengeUITests.swift; sourceTree = "<group>"; };
 		4AF60A4623CE9999002BE3C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AF60A5423CEA6B0002BE3C8 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		4AF60A5A23CEA7FA002BE3C8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4AF60A5D23CEA887002BE3C8 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		4AF60A5F23CEA895002BE3C8 /* PostListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostListViewController.storyboard; sourceTree = "<group>"; };
+		4AF60A6123CEA8B2002BE3C8 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
+		4AF60A6323CEA8BE002BE3C8 /* PostListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				4AF60A5223CE99ED002BE3C8 /* Application */,
+				4AF60A5923CEA7EB002BE3C8 /* Protocols */,
+				4AF60A5C23CEA831002BE3C8 /* PostList */,
 				4AF60A5323CE9A3F002BE3C8 /* Supporting Files */,
 			);
 			path = "Deviget-Challenge";
@@ -125,6 +139,7 @@
 				4AF60A2223CE9998002BE3C8 /* AppDelegate.swift */,
 				4AF60A2423CE9998002BE3C8 /* SceneDelegate.swift */,
 				4AF60A3023CE9999002BE3C8 /* Info.plist */,
+				4AF60A5423CEA6B0002BE3C8 /* ApplicationCoordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -136,6 +151,25 @@
 				4AF60A2D23CE9999002BE3C8 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4AF60A5923CEA7EB002BE3C8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4AF60A5A23CEA7FA002BE3C8 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4AF60A5C23CEA831002BE3C8 /* PostList */ = {
+			isa = PBXGroup;
+			children = (
+				4AF60A5D23CEA887002BE3C8 /* PostListViewController.swift */,
+				4AF60A5F23CEA895002BE3C8 /* PostListViewController.storyboard */,
+				4AF60A6123CEA8B2002BE3C8 /* PostListViewModel.swift */,
+				4AF60A6323CEA8BE002BE3C8 /* PostListCoordinator.swift */,
+			);
+			path = PostList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +278,7 @@
 			files = (
 				4AF60A2F23CE9999002BE3C8 /* LaunchScreen.storyboard in Resources */,
 				4AF60A2C23CE9999002BE3C8 /* Assets.xcassets in Resources */,
+				4AF60A6023CEA895002BE3C8 /* PostListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,8 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF60A5B23CEA7FA002BE3C8 /* Coordinator.swift in Sources */,
+				4AF60A5E23CEA887002BE3C8 /* PostListViewController.swift in Sources */,
+				4AF60A6423CEA8BE002BE3C8 /* PostListCoordinator.swift in Sources */,
+				4AF60A6223CEA8B2002BE3C8 /* PostListViewModel.swift in Sources */,
 				4AF60A2323CE9998002BE3C8 /* AppDelegate.swift in Sources */,
 				4AF60A2523CE9998002BE3C8 /* SceneDelegate.swift in Sources */,
+				4AF60A5523CEA6B0002BE3C8 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
