@@ -1,7 +1,50 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Post List View Controller-->
+        <scene sceneID="zJm-Rx-epi">
+            <objects>
+                <viewController storyboardIdentifier="PostListViewController" id="vSI-ri-TJp" customClass="PostListViewController" customModule="Deviget_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nFI-Y9-RTC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F6z-mF-qaA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="770"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyE-oc-Z9p">
+                                <rect key="frame" x="0.0" y="814" width="414" height="48"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wyE-oc-Z9p" firstAttribute="bottom" secondItem="Mya-8u-tPo" secondAttribute="bottom" id="7CO-uJ-WL9"/>
+                            <constraint firstItem="F6z-mF-qaA" firstAttribute="top" secondItem="Mya-8u-tPo" secondAttribute="top" id="BNF-Sf-6hx"/>
+                            <constraint firstItem="wyE-oc-Z9p" firstAttribute="top" secondItem="F6z-mF-qaA" secondAttribute="bottom" id="BaD-lA-UwJ"/>
+                            <constraint firstItem="Mya-8u-tPo" firstAttribute="bottom" secondItem="F6z-mF-qaA" secondAttribute="bottom" constant="48" id="FXD-WJ-2di"/>
+                            <constraint firstItem="F6z-mF-qaA" firstAttribute="leading" secondItem="Mya-8u-tPo" secondAttribute="leading" id="WyN-rb-ZIF"/>
+                            <constraint firstItem="wyE-oc-Z9p" firstAttribute="leading" secondItem="Mya-8u-tPo" secondAttribute="leading" id="Z1o-gz-Sju"/>
+                            <constraint firstItem="wyE-oc-Z9p" firstAttribute="trailing" secondItem="Mya-8u-tPo" secondAttribute="trailing" id="gvE-3a-V9V"/>
+                            <constraint firstItem="F6z-mF-qaA" firstAttribute="trailing" secondItem="Mya-8u-tPo" secondAttribute="trailing" id="w2N-yk-1oe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mya-8u-tPo"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissAllPostUIButton" destination="wyE-oc-Z9p" id="hJJ-zo-a5n"/>
+                        <outlet property="tableView" destination="F6z-mF-qaA" id="PuF-Qn-pcm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ISi-8I-ure" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-436.23188405797106" y="-123.21428571428571"/>
+        </scene>
+    </scenes>
 </document>
