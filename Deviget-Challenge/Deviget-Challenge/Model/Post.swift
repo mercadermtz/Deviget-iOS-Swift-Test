@@ -52,4 +52,19 @@ public struct Post: Codable, Equatable {
         try container.encode(url, forKey: .url)
         try container.encode(id, forKey: .id)
     }
+    
+    func getHoursFromTimeIntervalAsSTring() -> String {
+        let calendar = NSCalendar.current
+        let date = Date(timeInterval: -createdUTC, since: Date())
+        let components = calendar.dateComponents([.hour], from: date)
+        if let hour = components.hour {
+            if hour > 0 {
+                return String("\(hour) hours ago")
+            } else {
+                return "Minutes ago"
+            }
+        } else {
+            return "A few time ago"
+        }
+    }
 }
