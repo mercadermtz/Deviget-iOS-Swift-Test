@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Post Detail View Controller-->
+        <scene sceneID="fin-yw-Iz6">
+            <objects>
+                <viewController storyboardIdentifier="PostDetailViewController" id="Y4y-ih-ZJY" customClass="PostDetailViewController" customModule="Deviget_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ho3-Vq-eb0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PyL-YT-7WV">
+                                <rect key="frame" x="8" y="120" width="398" height="290"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCS-Xz-2e9">
+                                <rect key="frame" x="8" y="83" width="398" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdA-rj-g1E">
+                                <rect key="frame" x="8" y="418" width="398" height="293"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PdA-rj-g1E" firstAttribute="top" secondItem="PyL-YT-7WV" secondAttribute="bottom" constant="8" id="Dr4-cm-tVD"/>
+                            <constraint firstItem="48z-Tp-ENd" firstAttribute="bottom" secondItem="PdA-rj-g1E" secondAttribute="bottom" constant="151" id="K1S-yH-njO"/>
+                            <constraint firstItem="PyL-YT-7WV" firstAttribute="top" secondItem="CCS-Xz-2e9" secondAttribute="bottom" constant="16" id="Sv2-7U-Ei0"/>
+                            <constraint firstItem="48z-Tp-ENd" firstAttribute="trailing" secondItem="CCS-Xz-2e9" secondAttribute="trailing" constant="8" id="TiT-79-hqt"/>
+                            <constraint firstItem="PyL-YT-7WV" firstAttribute="trailing" secondItem="48z-Tp-ENd" secondAttribute="trailing" constant="-8" id="X9s-ru-d0D"/>
+                            <constraint firstItem="PyL-YT-7WV" firstAttribute="top" secondItem="48z-Tp-ENd" secondAttribute="top" constant="76" id="aEv-aC-Tyx"/>
+                            <constraint firstItem="48z-Tp-ENd" firstAttribute="bottom" secondItem="PyL-YT-7WV" secondAttribute="bottom" constant="452" id="aGa-wb-jkW"/>
+                            <constraint firstItem="PdA-rj-g1E" firstAttribute="leading" secondItem="48z-Tp-ENd" secondAttribute="leading" constant="8" id="jdd-Bg-bIU"/>
+                            <constraint firstItem="PyL-YT-7WV" firstAttribute="leading" secondItem="48z-Tp-ENd" secondAttribute="leading" constant="8" id="p5h-NE-Nrx"/>
+                            <constraint firstItem="PdA-rj-g1E" firstAttribute="trailing" secondItem="48z-Tp-ENd" secondAttribute="trailing" constant="-8" id="tUP-8K-Ha4"/>
+                            <constraint firstItem="CCS-Xz-2e9" firstAttribute="top" secondItem="48z-Tp-ENd" secondAttribute="top" constant="39" id="xbO-fE-1kE"/>
+                            <constraint firstItem="CCS-Xz-2e9" firstAttribute="leading" secondItem="48z-Tp-ENd" secondAttribute="leading" constant="8" id="ylG-M1-6L1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="48z-Tp-ENd"/>
+                    </view>
+                    <connections>
+                        <outlet property="postDescriptionUILabel" destination="PdA-rj-g1E" id="g0w-88-U4I"/>
+                        <outlet property="postImageUIImageView" destination="PyL-YT-7WV" id="vWf-Nx-jca"/>
+                        <outlet property="userNameUILabel" destination="CCS-Xz-2e9" id="1tv-hF-LA6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="egg-0h-fQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.521739130434788" y="5.3571428571428568"/>
+        </scene>
+    </scenes>
+</document>

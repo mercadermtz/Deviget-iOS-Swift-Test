@@ -15,6 +15,7 @@ protocol PostListViewControllerDelegate: class {
     func getPost(at indexPath: IndexPath) -> Post?
     func removePosts(_ posts: [Post])
     func getPostPosition(for post: Post) -> Int?
+    func didSelectPost(at index: Int)
 }
 
 class PostListViewController: UIViewController {
@@ -109,6 +110,7 @@ extension PostListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didSelectPost(at: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }

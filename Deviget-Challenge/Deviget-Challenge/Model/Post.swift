@@ -67,4 +67,10 @@ public struct Post: Codable, Equatable {
             return "A few time ago"
         }
     }
+    
+    func setRead() {
+        guard let id = id else { return }
+        let defaults = UserDefaults.standard
+        defaults.set(true, forKey: id)
+    }
 }

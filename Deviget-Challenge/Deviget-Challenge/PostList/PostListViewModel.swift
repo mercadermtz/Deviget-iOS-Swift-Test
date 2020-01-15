@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol PostListViewModelDelegate: class {
-    //
+    func didSelectPost(_ post: Post)
 }
 
 class PostListViewModel {
@@ -28,6 +28,16 @@ class PostListViewModel {
     init(networkManager: NetworkManager, dataManager: DataManager) {
         self.networkManager = networkManager
         self.dataManager = dataManager
+    }
+    
+    func refreshList() {
+        viewController?.tableView.reloadData()
+    }
+    
+    func setPostAsRead(_ postId: String) {
+        let selectedPost = topPost.filter {$0.id == postId }.first
+        selectedPost?.setRead()
+        refreshList()
     }
 }
 
@@ -49,6 +59,10 @@ extension PostListViewModel: PostListViewControllerDelegate {
     func removePosts(_ posts: [Post]) {
         let filteredPost = topPost.filter {!posts.contains($0)}
         topPost = filteredPost
+    }
+    
+    func didSelectPost(at index: Int) {
+        delegate?.didSelectPost(topPost[index])
     }
     
     func getNumberOfRows() -> Int {

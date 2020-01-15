@@ -28,6 +28,10 @@
 		4AF60A7523CEBDFD002BE3C8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A7423CEBDFD002BE3C8 /* NetworkManager.swift */; };
 		4AF60A7823CEBEF2002BE3C8 /* PostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A7623CEBEF2002BE3C8 /* PostListTableViewCell.swift */; };
 		4AF60A7923CEBEF2002BE3C8 /* PostListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AF60A7723CEBEF2002BE3C8 /* PostListTableViewCell.xib */; };
+		4AF60A7C23CF4C32002BE3C8 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A7B23CF4C32002BE3C8 /* PostDetailViewController.swift */; };
+		4AF60A7E23CF4C3F002BE3C8 /* PostDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF60A7D23CF4C3F002BE3C8 /* PostDetailViewController.storyboard */; };
+		4AF60A8023CF4C4E002BE3C8 /* PostDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A7F23CF4C4E002BE3C8 /* PostDetailCoordinator.swift */; };
+		4AF60A8223CF4C5B002BE3C8 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A8123CF4C5B002BE3C8 /* PostDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		4AF60A7423CEBDFD002BE3C8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4AF60A7623CEBEF2002BE3C8 /* PostListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListTableViewCell.swift; sourceTree = "<group>"; };
 		4AF60A7723CEBEF2002BE3C8 /* PostListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostListTableViewCell.xib; sourceTree = "<group>"; };
+		4AF60A7B23CF4C32002BE3C8 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		4AF60A7D23CF4C3F002BE3C8 /* PostDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostDetailViewController.storyboard; sourceTree = "<group>"; };
+		4AF60A7F23CF4C4E002BE3C8 /* PostDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCoordinator.swift; sourceTree = "<group>"; };
+		4AF60A8123CF4C5B002BE3C8 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,7 @@
 				4AF60A5223CE99ED002BE3C8 /* Application */,
 				4AF60A5923CEA7EB002BE3C8 /* Protocols */,
 				4AF60A5C23CEA831002BE3C8 /* PostList */,
+				4AF60A7A23CF4C14002BE3C8 /* PostDetail */,
 				4AF60A6523CEAE79002BE3C8 /* Helpers */,
 				4AF60A5323CE9A3F002BE3C8 /* Supporting Files */,
 			);
@@ -221,6 +230,17 @@
 				4AF60A7423CEBDFD002BE3C8 /* NetworkManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		4AF60A7A23CF4C14002BE3C8 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				4AF60A7B23CF4C32002BE3C8 /* PostDetailViewController.swift */,
+				4AF60A7D23CF4C3F002BE3C8 /* PostDetailViewController.storyboard */,
+				4AF60A7F23CF4C4E002BE3C8 /* PostDetailCoordinator.swift */,
+				4AF60A8123CF4C5B002BE3C8 /* PostDetailViewModel.swift */,
+			);
+			path = PostDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +351,7 @@
 				4AF60A2C23CE9999002BE3C8 /* Assets.xcassets in Resources */,
 				4AF60A6023CEA895002BE3C8 /* PostListViewController.storyboard in Resources */,
 				4AF60A7923CEBEF2002BE3C8 /* PostListTableViewCell.xib in Resources */,
+				4AF60A7E23CF4C3F002BE3C8 /* PostDetailViewController.storyboard in Resources */,
 				4AF60A6923CEAEC3002BE3C8 /* top.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,13 +377,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF60A8223CF4C5B002BE3C8 /* PostDetailViewModel.swift in Sources */,
 				4AF60A5B23CEA7FA002BE3C8 /* Coordinator.swift in Sources */,
 				4AF60A6723CEAE89002BE3C8 /* DataManager.swift in Sources */,
 				4AF60A6C23CEAEF8002BE3C8 /* RedditResponse.swift in Sources */,
+				4AF60A8023CF4C4E002BE3C8 /* PostDetailCoordinator.swift in Sources */,
 				4AF60A7523CEBDFD002BE3C8 /* NetworkManager.swift in Sources */,
 				4AF60A7223CEAF4A002BE3C8 /* Post.swift in Sources */,
 				4AF60A7023CEAF34002BE3C8 /* TopPostChildren.swift in Sources */,
 				4AF60A6E23CEAF1B002BE3C8 /* TopPostData.swift in Sources */,
+				4AF60A7C23CF4C32002BE3C8 /* PostDetailViewController.swift in Sources */,
 				4AF60A5E23CEA887002BE3C8 /* PostListViewController.swift in Sources */,
 				4AF60A6423CEA8BE002BE3C8 /* PostListCoordinator.swift in Sources */,
 				4AF60A7823CEBEF2002BE3C8 /* PostListTableViewCell.swift in Sources */,
