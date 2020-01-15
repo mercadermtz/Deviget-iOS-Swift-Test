@@ -32,6 +32,7 @@ class PostListTableViewCell: UITableViewCell {
         static let photoPlaceholderImageName = "photoPlaceholder"
         static let closeIconImageName = "closeIcon"
         static let commentsQuantityColor = UIColor(red: 0.98, green: 0.5, blue: 0.2, alpha: 1.0)
+        static let dismissButtonTitle = "Dismiss Post"
     }
     private let unreadImage = UIImage(named: Constants.unreadIndicatorImageName)
     private let photoPlacelholderImage = UIImage(named: Constants.photoPlaceholderImageName)
@@ -103,8 +104,11 @@ class PostListTableViewCell: UITableViewCell {
 // MARK: - UI Configuration
 extension PostListTableViewCell {
     func setupUI() {
+        backgroundColor = .black
+        
         configureUnreadIndicator()
         configureUserName()
+        configurePostCreationTimeLabel()
         configurePhotoThumbnail()
         configurePostTitle()
         configureDismissPostButton()
@@ -119,6 +123,12 @@ extension PostListTableViewCell {
     private func configureUserName() {
         userNameUILabel.textAlignment = .left
         userNameUILabel.font = UIFont.boldSystemFont(ofSize: 14)
+        userNameUILabel.textColor = .white
+    }
+    
+    private func configurePostCreationTimeLabel() {
+        postCreationTimeUILabel.textAlignment = .left
+        postCreationTimeUILabel.textColor = .gray
     }
     
     private func configurePhotoThumbnail() {
@@ -129,10 +139,11 @@ extension PostListTableViewCell {
     private func configurePostTitle() {
         postDescriptionPreviewUILabel.numberOfLines = 0
         postDescriptionPreviewUILabel.textAlignment = .natural
+        postDescriptionPreviewUILabel.textColor = .white
     }
     
     private func configureDismissPostButton() {
-        dismissPostUIButton.setTitle("Dismiss", for: .normal)
+        dismissPostUIButton.setTitle(Constants.dismissButtonTitle, for: .normal)
         dismissPostUIButton.setTitleColor(.white, for: .normal)
         dismissPostUIButton.setImage(closeIconImage, for: .normal)
         dismissPostUIButton.imageView?.contentMode = .scaleAspectFit

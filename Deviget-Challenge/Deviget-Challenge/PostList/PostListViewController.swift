@@ -8,18 +8,22 @@
 
 import UIKit
 
+import UIKit
+
 protocol PostListViewControllerDelegate: class {
     func loadTopPost(completion: @escaping () -> ())
     func getNumberOfRows() -> Int
-    func getPostThumbnailImage(from url: URL, completion:  @escaping (UIImage?, Error?) -> ())
     func getPost(at indexPath: IndexPath) -> Post?
-    func removePosts(_ posts: [Post])
+    func getPostThumbnailImage(from url: URL, completion:  @escaping (UIImage?, Error?) -> ())
     func getPostPosition(for post: Post) -> Int?
+    func removePosts(_ posts: [Post])
     func didSelectPost(at index: Int)
+    func traitCollectionDidChangeToCompact()
+    func traitCollectionDidChangeToRegular()
 }
 
 class PostListViewController: UIViewController {
-
+    
     weak var delegate: PostListViewControllerDelegate?
     
     // MARK: - IBOutlets
@@ -37,8 +41,15 @@ class PostListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
         delegate?.loadTopPost {
             DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
                 self.configureView()
             }
         }
@@ -63,11 +74,21 @@ class PostListViewController: UIViewController {
         delegate?.removePosts(postArray)
         tableView.deleteRows(at: indexPathArray, with: .automatic)
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if traitCollection.verticalSizeClass == .compact {
+            delegate?.traitCollectionDidChangeToCompact()
+        } else {
+            delegate?.traitCollectionDidChangeToRegular()
+        }
+        
+    }
 }
 
 // MARK: - Private Methods
 extension PostListViewController {
     private func configureView() {
+        view.backgroundColor = .black
         title = Constants.viewTitle
         configureTableView()
         configureDismissAllPostButton()
@@ -78,10 +99,15 @@ extension PostListViewController {
         tableView.register(postListTableViewCell, forCellReuseIdentifier: Constants.tableViewCellIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = .black
+        tableView.separatorStyle = .singleLine
+        tableView.separatorColor = .white
         
         let tableViewRefreshControl = UIRefreshControl()
-        tableViewRefreshControl.attributedTitle = NSAttributedString(string: Constants.refreshControlTitle)
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        tableViewRefreshControl.attributedTitle = NSAttributedString(string: Constants.refreshControlTitle, attributes: attributes)
         tableViewRefreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableViewRefreshControl.tintColor = .white
         tableView.refreshControl = tableViewRefreshControl
     }
     
@@ -131,3 +157,4 @@ extension PostListViewController: PostListTableViewCellProtocol {
         
     }
 }
+

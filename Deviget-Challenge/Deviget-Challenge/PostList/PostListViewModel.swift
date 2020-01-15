@@ -11,6 +11,8 @@ import UIKit
 
 protocol PostListViewModelDelegate: class {
     func didSelectPost(_ post: Post)
+    func traitCollectionDidChangeToCompact()
+    func traitCollectionDidChangeToRegular()
 }
 
 class PostListViewModel {
@@ -42,6 +44,28 @@ class PostListViewModel {
 }
 
 extension PostListViewModel: PostListViewControllerDelegate {
+    func getPostThumbnailImage(from url: URL, completion:  @escaping (UIImage?, Error?) -> ()) {
+        networkManager.downloadImage(from: url) { (image, error) in
+            completion(image, error)
+        }
+    }
+    
+    func loadTopPost(completion: @escaping () -> ()) {
+        if let topPostChildren = dataManager.getTopPost() {
+            self.topPostChildren = topPostChildren
+           populateTopPosts()
+        }
+        completion()
+    }
+    
+    func getNumberOfRows() -> Int {
+        return topPost.count
+    }
+    
+    func getPost(at indexPath: IndexPath) -> Post? {
+        return topPost[indexPath.row]
+    }
+    
     func getPostPosition(for post: Post) -> Int? {
         for (index, savedPost) in topPost.enumerated() {
             if savedPost.id == post.id {
@@ -50,10 +74,6 @@ extension PostListViewModel: PostListViewControllerDelegate {
         }
         
         return nil
-    }
-    
-    func getPost(at indexPath: IndexPath) -> Post? {
-        return topPost[indexPath.row]
     }
     
     func removePosts(_ posts: [Post]) {
@@ -65,22 +85,12 @@ extension PostListViewModel: PostListViewControllerDelegate {
         delegate?.didSelectPost(topPost[index])
     }
     
-    func getNumberOfRows() -> Int {
-        return topPost.count
+    func traitCollectionDidChangeToCompact() {
+        delegate?.traitCollectionDidChangeToCompact()
     }
     
-    func loadTopPost(completion: @escaping () -> ()) {
-        if let topPostChildren = dataManager.getTopPost() {
-            self.topPostChildren = topPostChildren
-            populateTopPosts()
-        }
-        completion()
-    }
-    
-    func getPostThumbnailImage(from url: URL, completion:  @escaping (UIImage?, Error?) -> ()) {
-        networkManager.downloadImage(from: url) { (image, error) in
-            completion(image, error)
-        }
+    func traitCollectionDidChangeToRegular() {
+        delegate?.traitCollectionDidChangeToRegular()
     }
 }
 

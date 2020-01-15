@@ -32,6 +32,8 @@
 		4AF60A7E23CF4C3F002BE3C8 /* PostDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF60A7D23CF4C3F002BE3C8 /* PostDetailViewController.storyboard */; };
 		4AF60A8023CF4C4E002BE3C8 /* PostDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A7F23CF4C4E002BE3C8 /* PostDetailCoordinator.swift */; };
 		4AF60A8223CF4C5B002BE3C8 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A8123CF4C5B002BE3C8 /* PostDetailViewModel.swift */; };
+		4AF60A8523CF5F2C002BE3C8 /* PostListSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF60A8423CF5F2C002BE3C8 /* PostListSplitViewController.swift */; };
+		4AF60A8923CF5F98002BE3C8 /* PostListSplitViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF60A8823CF5F98002BE3C8 /* PostListSplitViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		4AF60A7D23CF4C3F002BE3C8 /* PostDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostDetailViewController.storyboard; sourceTree = "<group>"; };
 		4AF60A7F23CF4C4E002BE3C8 /* PostDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCoordinator.swift; sourceTree = "<group>"; };
 		4AF60A8123CF4C5B002BE3C8 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
+		4AF60A8423CF5F2C002BE3C8 /* PostListSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListSplitViewController.swift; sourceTree = "<group>"; };
+		4AF60A8823CF5F98002BE3C8 /* PostListSplitViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostListSplitViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 				4AF60A5C23CEA831002BE3C8 /* PostList */,
 				4AF60A7A23CF4C14002BE3C8 /* PostDetail */,
 				4AF60A6523CEAE79002BE3C8 /* Helpers */,
+				4AF60A8323CF5EFB002BE3C8 /* PostSplitView */,
 				4AF60A5323CE9A3F002BE3C8 /* Supporting Files */,
 			);
 			path = "Deviget-Challenge";
@@ -241,6 +246,15 @@
 				4AF60A8123CF4C5B002BE3C8 /* PostDetailViewModel.swift */,
 			);
 			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		4AF60A8323CF5EFB002BE3C8 /* PostSplitView */ = {
+			isa = PBXGroup;
+			children = (
+				4AF60A8423CF5F2C002BE3C8 /* PostListSplitViewController.swift */,
+				4AF60A8823CF5F98002BE3C8 /* PostListSplitViewController.storyboard */,
+			);
+			path = PostSplitView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AF60A2F23CE9999002BE3C8 /* LaunchScreen.storyboard in Resources */,
+				4AF60A8923CF5F98002BE3C8 /* PostListSplitViewController.storyboard in Resources */,
 				4AF60A2C23CE9999002BE3C8 /* Assets.xcassets in Resources */,
 				4AF60A6023CEA895002BE3C8 /* PostListViewController.storyboard in Resources */,
 				4AF60A7923CEBEF2002BE3C8 /* PostListTableViewCell.xib in Resources */,
@@ -386,6 +401,7 @@
 				4AF60A7223CEAF4A002BE3C8 /* Post.swift in Sources */,
 				4AF60A7023CEAF34002BE3C8 /* TopPostChildren.swift in Sources */,
 				4AF60A6E23CEAF1B002BE3C8 /* TopPostData.swift in Sources */,
+				4AF60A8523CF5F2C002BE3C8 /* PostListSplitViewController.swift in Sources */,
 				4AF60A7C23CF4C32002BE3C8 /* PostDetailViewController.swift in Sources */,
 				4AF60A5E23CEA887002BE3C8 /* PostListViewController.swift in Sources */,
 				4AF60A6423CEA8BE002BE3C8 /* PostListCoordinator.swift in Sources */,
