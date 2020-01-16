@@ -47,7 +47,7 @@ class PostListViewController: UIViewController {
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
         
-        delegate?.loadTopPost {
+        loadData {
             DispatchQueue.main.async {
                 activityIndicator.stopAnimating()
                 self.configureView()
@@ -56,7 +56,12 @@ class PostListViewController: UIViewController {
     }
     
     @objc func refresh(sender: AnyObject) {
-        tableView.refreshControl?.endRefreshing()
+        loadData {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.tableView.refreshControl?.endRefreshing()
+            }
+        }
     }
     
     @objc func deleteAllCurrentPost() {
@@ -117,6 +122,10 @@ extension PostListViewController {
         dismissAllPostUIButton.setTitleColor(buttonTitleColor, for: .normal)
         dismissAllPostUIButton.addTarget(self, action: #selector(deleteAllCurrentPost), for: .touchUpInside)
     }
+    
+    private func loadData(completion: @escaping () -> ()) {
+        delegate?.loadTopPost(completion: { completion() })
+    }
 }
 
 // MARK: TableView Delege & Data Source
@@ -138,6 +147,18 @@ extension PostListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.didSelectPost(at: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+// MARK: UIScrollViewDelegate
+extension PostListViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+
+        if currentOffset >= maximumOffset{
+            loadData { self.tableView.reloadData() }
+        }
     }
 }
 

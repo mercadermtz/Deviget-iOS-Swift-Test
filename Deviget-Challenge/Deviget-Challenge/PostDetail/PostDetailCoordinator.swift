@@ -32,7 +32,7 @@ class PostDetailCoordinator: Coordinator {
         let storyboard = UIStoryboard(name: Constants.postDetailStoryboardName, bundle: nil)
         guard let postDetailViewController = storyboard.instantiateViewController(withIdentifier: Constants.postDetailViewControllerName) as? PostDetailViewController else { return }
         
-        let viewModel = PostDetailViewModel(dataManager: DataManager(), post: post)
+        let viewModel = PostDetailViewModel(networkManager: NetworkManager(), dataManager: DataManager(), post: post)
         viewModel.delegate = self
         self.viewModel = viewModel
         postDetailViewController.delegate = viewModel

@@ -18,11 +18,13 @@ class PostDetailViewModel {
     
     // MARK: - Constants
     let dataManager: DataManager?
+    let networkManager: NetworkManager
     
     // MARK: - Variables
     var post: Post?
     
-    init(dataManager: DataManager, post: Post?) {
+    init(networkManager: NetworkManager, dataManager: DataManager, post: Post?) {
+        self.networkManager = networkManager
         self.dataManager = dataManager
         self.post = post
     }
@@ -34,8 +36,11 @@ extension PostDetailViewModel: PostDetailViewControllerDelegate {
         return author
     }
     
-    func getPostImage() -> UIImage {
-        return UIImage()
+    func getPostImage(completion:  @escaping (UIImage?, Error?) -> ()) {
+        guard let imageURL = post?.thumbnail, let url = URL(string: imageURL) else { return }
+        networkManager.downloadImage(from: url) { (image, error) in
+            completion(image, error)
+        }
     }
     
     func getPostDescription() -> String? {
